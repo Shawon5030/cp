@@ -439,5 +439,134 @@
       "}"
     ],
     "description": "Recursive Factorial function"
-  }
+  },
+
+  "dfs": {
+  "prefix": "dfs",
+  "body": [
+    "void dfs(int s){",
+    "    vis[s]=true;",
+    "    cout<<s<<\" \";",
+    "",
+    "    for(auto val:v[s]){",
+    "        if(!vis[val]){",
+    "            vis[val]=true;",
+    "            dfs(val);",
+    "        }",
+    "    }",
+    "    ",
+    "}"
+  ],
+  "description": ""
+},
+
+"cycle dricet": {
+  "prefix": "cycle dricet",
+  "body": [
+    "",
+    "vector<int> v[1005];",
+    "vector<bool> parant(1005,false);",
+    "vector<bool> vis(1005,false);",
+    "vector<bool> pathVis(1005,false);",
+    "bool cycle = false;",
+    "void dfs(int s){",
+    "",
+    "    ",
+    "    vis[s]=true;",
+    "    cout<<s<<\" \";",
+    "    pathVis[s]=true;",
+    "",
+    " ",
+    "    for(auto val:v[s]){",
+    "        if(vis[val] && pathVis[val])",
+    "                cycle=true;",
+    "    ",
+    "        if(!vis[val])",
+    "            dfs(val);",
+    "    }",
+    "",
+    "    pathVis[s]=false;",
+    "}",
+    ""
+  ],
+  "description": ""
+},
+
+"cycle un": {
+  "prefix": "cycle un",
+  "body": [
+    "",
+    "vector<int> v[1005];",
+    "vector<bool> vis(1005, false);",
+    "vector<int> parent(1005, -1);  // Using vector<int> instead of array",
+    "bool cycle = false;",
+    "",
+    "void bfs(int src) {",
+    "    queue<int> q;",
+    "    q.push(src);",
+    "    vis[src] = true;",
+    "    parent[src] = -1;",
+    "",
+    "    while (!q.empty()) {",
+    "        int par = q.front();",
+    "        q.pop();",
+    "",
+    "        for (int child : v[par]) {",
+    "            if (vis[child] && child != parent[par]) {",
+    "                cycle = true;",
+    "                return;",
+    "            }",
+    "",
+    "            if (!vis[child]) {",
+    "                q.push(child);",
+    "                parent[child] = par;",
+    "                vis[child] = true;",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "description": ""
+},
+
+
+"shortest distance": {
+  "prefix": "shortest distance",
+  "body": [
+    "",
+    "vector<int> v[1005];",
+    "vector<bool> vis(1005,false);",
+    "vector<int>l(1005,0);",
+    "",
+    "",
+    "void bfs(int src)",
+    "{",
+    "    queue<int> q;",
+    "    q.push(src);",
+    "    vis[src] = true;",
+    "    l[src]=1;",
+    "",
+    "    while (!q.empty())",
+    "    {",
+    "        int par = q.front();",
+    "        q.pop();",
+    "",
+    "",
+    "",
+    "        for (int child : v[par])",
+    "        {",
+    "            ",
+    "            if (vis[child] == false)",
+    "            {",
+    "                q.push(child);",
+    "                vis[child] = true;",
+    "                l[child]=l[par]+1;",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "description": ""
+}
+
 }
