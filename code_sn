@@ -410,5 +410,34 @@
       "};"
     ],
     "description": "Custom min-heap comparator"
+  },
+   "fibonacci": {
+    "prefix": "fibonacci",
+    "body": [
+      "int fibonacci(int n) {",
+      "    // Base Case",
+      "    if (n == 0) return 0;",
+      "    if (n == 1) return 1;",
+      "",
+      "    // Recursive Case",
+      "    return fibonacci(n - 1) + fibonacci(n - 2);",
+      "}"
+    ],
+    "description": "Recursive Fibonacci function"
+  },
+  "factorial": {
+    "prefix": "factorial",
+    "body": [
+      "int factorial(int n) {",
+      "    // Base Case",
+      "    if (n == 0 || n == 1) {",
+      "        return 1;",
+      "    }",
+      "",
+      "    // Recursive Case",
+      "    return n * factorial(n - 1);",
+      "}"
+    ],
+    "description": "Recursive Factorial function"
   }
 }
